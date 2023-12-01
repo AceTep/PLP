@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="text-center">
+    <h1>Mateo Trakostanec</h1>
+    <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+  </header>
+
+  <main>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="pp.jpg" alt="Your Photo" class="profile-photo" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <p>Hello there! I'm Mateo, a 21-year-old student at Faculty of Informatics and Digital Technologies. I have a passion for web development and photography.</p>
+            <p>When I'm not coding, you'll often find me hiking with a camera in hand, capturing moments and telling stories through photography. It's my way of expressing creativity and capturing the beauty of the world.</p>
+            <p>I believe in continuous learning and improvement, always seeking new challenges and opportunities to grow both as a developer and an artist.</p>
+            <p>Feel free to explore my projects and get in touch! Let's create something amazing together.</p>
+          </div>
+        </div>
+      </section>
+      
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Web Development Projects</h3>
+            <ul>
+              <li><a href="https://github.com/AceTep/FotoStudioBlic">Foto Studio Blic</a>: Profolio website made as part of my collage course final exam.</li>
+              <li><a href="https://github.com/AceTep/WebChat">Web Chat</a>: Simple real-time web chat made in highschool using php and jquerry.</li>
+              <li><a href="https://github.com/AceTep/PicForum">Picture sharing forum</a>: Forum where you can share all your favourite pictures with your friends.</li>
+              <!-- Add more projects as needed -->
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3>Work Experience</h3>
+            <h4>Customer Support at E-Gaming Firm</h4>
+            <p>During my time at the e-gaming firm, I gained valuable experience in customer support, providing assistance to users and ensuring their positive gaming experience.</p>
+            <h3>Education</h3>
+            <h4>Web Development High School</h4>
+            <p>I successfully completed my education at Elektrostrojarska škola Varaždin, where I acquired foundational skills in web technologies and development.</p>
+            <h3>GitHub Projects</h3>
+            <p>You can find some of my projects on my <a href="https://github.com/AceTep">GitHub</a> profile. These projects showcase my coding skills and passion for web development.</p>
+          </div>
+        </div>
+      </section>
+      <div class="container-fluid quote-section">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <blockquote class="blockquote">
+              <p class="mb-0">"Code with passion, capture conversations, and paint the masterpiece of understanding."</p>
+              <p class="mb-0">-ChatGTP</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="/send-email" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023. Mateo Trakostanec</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
