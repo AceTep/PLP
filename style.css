@@ -1,104 +1,275 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  main {
-    padding: 20px;
-    flex: 1;
-  }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
-  form {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  footer {
-    flex-shrink: 0;
-  }
+/* Modernized Portfolio CSS (Bootstrap-friendly) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding-bottom: 60px; /* For the sticky footer */
-  }
+:root{
+  --bg: #0b1020;
+  --bg2:#0f172a;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+  --border: rgba(255,255,255,.12);
 
-  header {
-    background-color: #343a40;
-    color: white;
-    padding: 20px 0;
-  }
+  --accent: #7c3aed;  /* purple */
+  --accent2:#22c55e;  /* green */
 
-  header h1 {
-    font-size: 2.5rem;
-  }
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+  --shadow2: 0 10px 30px rgba(0,0,0,.35);
 
-  main {
-    padding: 40px 20px;
-  }
-
-  section {
-    margin-bottom: 40px;
-  }
-
-  footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .profile-photo {
-    width: 300px; /* Set your desired width */
-    height: 300px; /* Set your desired height */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    border-radius: 50%; /* For a rounded profile photo */}
-
-    .quote-section {
-        padding: 40px 0; /* Add padding for better spacing */
-      }
-#contactForm button[type="submit"] {
-background-color: #343a40; /* Change this to your preferred color */
-border-color: #343a40; /* Matching border color for consistency */
+  --radius: 18px;
 }
 
-/* Change button text color to white for better visibility */
-#contactForm button[type="submit"]:hover {
-color: white;
+*{ box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(34,197,94,.18), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  /* Sticky footer without "position: fixed" */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4{
+  color: rgba(255,255,255,.94);
+  letter-spacing: -0.02em;
+}
+
+header h1{
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  margin: 0;
+}
+
+h2{
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+h3{
+  font-size: 1.15rem;
+  margin-top: 0.75rem;
+}
+
+p{
+  color: var(--muted);
+}
+
+/* Links */
+a{
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+a:hover{
+  opacity: .95;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Header / Nav */
+header{
+  position: relative;
+  padding: 56px 12px 22px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(900px 500px at 50% 0%, rgba(124,58,237,.25), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+}
+
+header::after{
+  content: "";
+  display: block;
+  width: min(900px, 92vw);
+  height: 1px;
+  margin: 24px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+}
+
+nav{
+  margin-top: 16px;
+}
+
+.nav{
+  display: inline-flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2);
+}
+
+.nav .nav-link{
+  color: rgba(255,255,255,.88);
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: background .15s ease, transform .15s ease;
+}
+
+.nav .nav-link:hover{
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Main layout */
+main{
+  flex: 1;
+  padding: 34px 12px 80px;
+}
+
+/* Sections as cards */
+section{
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow2);
+  padding: 26px;
+  margin: 0 auto 18px;
+}
+
+@media (min-width: 768px){
+  section{
+    padding: 34px;
+    margin-bottom: 22px;
+  }
+}
+
+/* Profile photo */
+.profile-photo{
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: var(--shadow);
+  margin: 8px auto 14px;
+  display: block;
+}
+
+@media (min-width: 768px){
+  .profile-photo{
+    width: 320px;
+    height: 320px;
+    margin: 0;
+  }
+}
+
+/* Project list */
+#projects ul{
+  padding-left: 1.15rem;
+  margin: 0.6rem 0 0;
+}
+
+#projects li{
+  margin: 0.55rem 0;
+  color: var(--muted);
+}
+
+#projects li a{
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+}
+
+#projects li a:hover{
+  color: rgba(255,255,255,1);
+}
+
+/* Quote section */
+.quote-section{
+  margin: 0 auto 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    135deg,
+    rgba(124,58,237,.16),
+    rgba(34,197,94,.10)
+  );
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(10px);
+  padding: 26px 14px;
+}
+
+.quote-section .blockquote{
+  margin: 0;
+}
+
+.quote-section .blockquote p{
+  color: rgba(255,255,255,.88);
+}
+
+.quote-section .blockquote .mb-0:last-child{
+  color: rgba(255,255,255,.70);
+  margin-top: 10px;
+}
+
+/* Footer (not fixed; no overlap) */
+footer{
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  text-align: center;
+  padding: 14px 10px;
+}
+
+footer p{
+  margin: 0;
+  color: rgba(255,255,255,.72);
+}
+
+/* Small polish: nicer selection */
+::selection{
+  background: rgba(124,58,237,.35);
+}
+
+/* Optional: smoother scroll for anchor links */
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* ===== Soft header fade (modern separation) ===== */
+header{
+  border-bottom: none !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,0)
+  ) !important;
+}
+
+header::after{
+  display: none !important;
+}
+/* ===== Stop gradient from repeating / creating seams ===== */
+
+/* Put the background on <html> (full document), keep <body> transparent */
+html{
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 800px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(34,197,94,.18), transparent 55%),
+    linear-gradient(180deg, #0b1020, #0f172a);
+
+  background-repeat: no-repeat;
+  background-size: cover;          /* prevents “one-screen tile” effect */
+  background-attachment: fixed;    /* keeps it from “resetting” as you scroll */
+}
+
+body{
+  background: transparent !important;
 }
